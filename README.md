@@ -3,7 +3,7 @@
 ## TODO
 
 ### Source - Jun 18
-- Set up News API
+- Set up News API (API Key: 88d3bf9f4bed4dfabda05fbfa5f3999e)
 
 ### NLP Core
 - Get sample JSON (Jun 18)
