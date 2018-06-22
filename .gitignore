@@ -1,0 +1,2 @@
+# Don't push notebook checkpoints
+.ipynb_checkpoints/
