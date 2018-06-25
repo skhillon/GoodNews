@@ -1,12 +1,14 @@
 # GoodNews
+Finds the happiest headlines of the day.
+
+## Getting Started
+- [Follow this tutorial to learn how to set up iPython/Jupyter Notebooks](https://medium.com/codingthesmartway-com-blog/getting-started-with-jupyter-notebook-for-python-4e7082bd5d46)
+- Run your notebook in http://localhost:8888/lab (make sure Anaconda is running)
+- Bonus: This article is written in Markdown, and Jupyter Notebooks also use Markdown. Skim through this or bookmark it: [Github Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- Bonus: Jupyter Notebooks also support LaTEX ("la-tech") for math equations. I doubt you'll need it, but keep this [LaTEX Cheat Sheet](https://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf) handy.
 
 ## TODO
-
-### Source - Jun 18
-- Set up News API (API Key: 88d3bf9f4bed4dfabda05fbfa5f3999e)
-
 ### NLP Core
-- Get sample JSON (Jun 18)
 - Research technologies, figure out best one for the job (June 25)
 - Build Analysis and Recommendation Engine in Python, start with a Notebook (July 20)
 - Clean up code, write unit tests
