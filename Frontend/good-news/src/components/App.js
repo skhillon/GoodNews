@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Button from '@material-ui/core/Button';
+import Footer from './Footer';
 
 export default class App extends React.Component {
   render() {
     return (
-      <Button variant="raised" color="primary">
-        Click me
-      </Button>
+      <Footer></Footer>
     );
   }
 }
