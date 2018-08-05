@@ -1,3 +1,6 @@
 # Don't push notebook checkpoints
 .ipynb_checkpoints/
 *.csv
+
+# Mac system files
+DS_Store
