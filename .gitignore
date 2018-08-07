@@ -1,6 +1,15 @@
-# Don't push notebook checkpoints
+# Notebook checkpoints
 .ipynb_checkpoints/
+
+# Large data.
 *.csv
+*.h5
+
+# Python
+__pycache__
 
 # Mac system files
 DS_Store
+
+# Editor settings
+.vscode/*
