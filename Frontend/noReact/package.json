@@ -1,0 +1,11 @@
+{
+  "name": "good-news",
+  "version": "1.0.0",
+  "description": "Website to show only good news from various news sources",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Siddharth Khillon and Sarthak Khillon",
+  "license": "ISC",
+}

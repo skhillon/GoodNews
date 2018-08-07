@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="A machine learning based website to only give you news that makes you feel happy.">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<title>Good News</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_orange-deep_purple.min.css"/>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<!-- Uses a transparent header that draws on top of the layout's background -->
+		<style>
+			body, html {
+			height: 100%;
+			}
+			.bg { 
+			/* The image used */
+			background-image: url("temporaryBackground.jpg");
+			/* Full height */
+			height: 100%; 
+			/* Center and scale the image nicely */
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			}
+			.demo-layout-transparent {
+			background: url('temporaryBackground.jpg') center / cover;
+			}
+			.demo-layout-transparent .mdl-layout__header,
+			.demo-layout-transparent .mdl-layout__drawer-button {
+			/* This background is dark, so we set text to white. Use 87% black instead if
+			your background is light. */
+			color: white;
+			}
+			.toolbar-button{
+			color: white;
+			}
+			.demo-card-wide.mdl-card {
+			width: 512px;
+			}
+			.demo-card-wide > .mdl-card__title {
+			color: #fff;
+			height: 176px;
+			background: url('../assets/demos/welcome_card.jpg') center / cover;
+			}
+			.demo-card-wide > .mdl-card__menu {
+			color: #fff;
+			}
+		</style>
+		<div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<header class="mdl-layout__header mdl-layout__header--transparent">
+			<!--Start Header-->
+			<div class="mdl-layout__header-row">
+				<!-- Title -->
+				<a href="?"><span class="mdl-layout-title">Good News</span></a>
+				<!-- Add spacer, to align navigation to the right -->
+				<div class="mdl-layout-spacer"></div>
+				<!-- Navigation -->
+				<nav class="mdl-navigation mdl-layout--large-screen-only">
+					<!-- Raised button with ripple -->
+					<!-- Flat button with ripple -->
+					<a class="mdl-navigation__link" href="?category=b">Business</a>
+					<a class="mdl-navigation__link" href="?category=t">Science and Technology</a>
+					<a class="mdl-navigation__link" href="?category=e">Entertainment</a>
+					<a class="mdl-navigation__link" href="?category=m">Health and Medicine</a>
+					<a class="mdl-navigation" href="">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3">
+							<circle cx="10.5" cy="10.5" r="7.5"></circle>
+							<line x1="21" y1="21" x2="15.8" y2="15.8"></line>
+						</svg>
+					</a>
+				</nav>
+			</div>
+		</header>
+		<!--End Header-->
+		<div class="mdl-layout__drawer">
+			<a href="#"><span class="mdl-layout-title">Title</span></a>
+			<nav class="mdl-navigation">
+				<a class="mdl-navigation__link" href="">Link</a>
+				<a class="mdl-navigation__link" href="">Link</a>
+				<a class="mdl-navigation__link" href="">Link</a>
+				<a class="mdl-navigation__link" href="">Link</a>
+			</nav>
+		</div>
+		<main class="mdl-layout__content">
+			<div class="page-content">
+				<div id="mainPageGrid" class="mdl-grid" style="max-width: 1200px">
+					<div class="mdl-card mdl-cell mdl-cell--6col">
+						<div class="mdl-card__title">
+							<h4 class="mdl-card__title-text">jkadljfU.S. lifts ban on suppliers selling to China's ZTE</h4>
+						</div>
+						<div class="mdl-card__supporting-text">
+							Reuters 12/30/18
+						</div>
+						<div class="mdl-card__actions mdl-card--border">
+							<a href="https://www.reuters.com/article/us-usa-trade-china-zte/us-lifts-ban-on-suppliers-selling-to-chinas-zte-idUSKBN1K32CN"class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+							Go to article
+							</a>
+						</div>
+						<div class="mdl-card__menu">
+						</div>
+					</div>
+					<div class="mdl-card mdl-cell mdl-cell--6col"></div>
+					<div class="mdl-card mdl-cell mdl-cell--6col"></div>
+				</div>
+		</main>
+		</div>
+	</body>
+</html>
