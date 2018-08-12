@@ -2,6 +2,8 @@
 var TEST_URL = "localhost:8000/"
 var PROD_URL = "goodnews.space/"
 
+var urlParams = new URLSearchParams(window.location.search);
+
 var getJSONWeb = function(url, callback) {
 	var request = new XMLHttpRequest();
 	request.open('GET', url, true);
@@ -13,27 +15,8 @@ var getJSONWeb = function(url, callback) {
 	request.send();
 };
 
-function getParameterByName(name, url) {
-    if (!url) {
-        url = window.location.href;
-    }
 
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-    results = regex.exec(url);
-
-    if (!results || results.length < 3) {
-        return null;
-    }
-    else if (!results[2]) {
-        return '';
-    }
-    else {
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
-}
-
-console.log(getParameterByName("category"));
+console.log(urlParams.get("category"));
 
 /*
 //How to use it example
@@ -55,7 +38,7 @@ var data = JSON.parse(JSONtext);
 //Data is parsed
 console.log(data);
 function loadDataToWebpage(category){
-	var noCategory = (category == null) ? true : false;
+	var noCategory = (category == null);
     console.log(noCategory);
 	document.getElementById("mainPageGrid").innerHTML = "";
     for (let i = 0; i < data.length; i++){
@@ -63,7 +46,7 @@ function loadDataToWebpage(category){
 		console.log(data[i]["category"])
 		console.log(category)
 		console.log(data[i]["category"] != category)
-		if (data[i]["category"] != category) {
+		if (data[i]["category"] != category && category != null) {
 			console.log("continued")
 			continue;
 		}
@@ -123,5 +106,7 @@ function remove_qs(url) {
     return a.href;
 }
 
-window.onload = function() {loadDataToWebpage(getParameterByName("category"))};
+window.onload = function() {
+	loadDataToWebpage(urlParams.get("category"));
+}
 
