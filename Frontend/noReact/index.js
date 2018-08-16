@@ -1,5 +1,4 @@
-//Created by Siddharth Khillon, July 2018
-var TEST_URL = "localhost:8000/"
+var TEST_URL = "http://localhost:8000/"
 var PROD_URL = "goodnews.space/"
 
 var urlParams = new URLSearchParams(window.location.search);
@@ -7,7 +6,7 @@ var urlParams = new URLSearchParams(window.location.search);
 var getJSONWeb = function(url, callback) {
 	var request = new XMLHttpRequest();
 	request.open('GET', url, true);
-	request.responseType = "json";
+    request.responseType = "json";
     request.onload = function () {
         let status = (request.status == 200) ? request.status : null;
         callback(status, request.response);
@@ -32,12 +31,10 @@ function(err, data) {
 
 //Pretend we have the json
 //comment line directly below if wanting to use url above
-var JSONtext = `[{"title": "U.S. lifts ban on suppliers selling to China's ZTE med", "url": "https://www.reuters.com/article/us-usa-trade-china-zte/us-lifts-ban-on-suppliers-selling-to-chinas-zte-idUSKBN1K32CN", "publisher": "Reuters", "category": "m", "timestamp": 1394470370698}, {"title": "U.S. lifts ban on suppliers selling to China's ZTE bus", "url": "https://www.reuters.com/article/us-usa-trade-china-zte/us-lifts-ban-on-suppliers-selling-to-chinas-zte-idUSKBN1K32CN", "publisher": "Reuters", "category": "b", "timestamp": 1394470370698}]`
-var data = JSON.parse(JSONtext);
+//var JSONtext = `[{"title": "U.S. lifts ban on suppliers selling to China's ZTE med", "url": "https://www.reuters.com/article/us-usa-trade-china-zte/us-lifts-ban-on-suppliers-selling-to-chinas-zte-idUSKBN1K32CN", "publisher": "Reuters", "category": "m", "timestamp": 1394470370698}, {"title": "U.S. lifts ban on suppliers selling to China's ZTE bus", "url": "https://www.reuters.com/article/us-usa-trade-china-zte/us-lifts-ban-on-suppliers-selling-to-chinas-zte-idUSKBN1K32CN", "publisher": "Reuters", "category": "b", "timestamp": 1394470370698}]`
+//var data = JSON.parse(JSONtext);
 
-//Data is parsed
-console.log(data);
-function loadDataToWebpage(category){
+function loadDataToWebpage(data, category){
 	var noCategory = (category == null);
     console.log(noCategory);
 	document.getElementById("mainPageGrid").innerHTML = "";
@@ -106,7 +103,17 @@ function remove_qs(url) {
     return a.href;
 }
 
-window.onload = function() {
-	loadDataToWebpage(urlParams.get("category"));
+window.onload = function () {
+    var callback = function (status, response) {
+        if (status == null) {
+            window.alert('Could not get data from server.');
+            return;
+        }
+        
+        console.log(response);
+        loadDataToWebpage(response, urlParams.get("category"));   
+    }
+
+    getJSONWeb("http://localhost:8000/", callback);
 }
 

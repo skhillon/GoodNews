@@ -16,3 +16,12 @@ def get_raw_articles(test_mode=False, test_filename=None):
 def _query_news_api(params):
     raw_json = requests.get(News.BASE_URL.value, params=params).json()
     return raw_json['articles']
+
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    if request.method == 'OPTIONS':
+        response.headers['Access-Control-Allow-Methods'] = 'DELETE, GET, POST, PUT'
+        headers = request.headers.get('Access-Control-Request-Headers')
+        if headers:
+            response.headers['Access-Control-Allow-Headers'] = headers
+    return response
