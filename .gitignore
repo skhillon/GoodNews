@@ -13,3 +13,6 @@ DS_Store
 
 # Editor settings
 .vscode/*
+
+# JSON files
+Backend/*.json
